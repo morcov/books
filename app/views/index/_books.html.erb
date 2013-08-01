@@ -1,0 +1,11 @@
+<p>
+  <table>
+   <% @books.each do |book| %>
+    <tr>
+      <td colspan="2"><b><%= link_to book.name, book_path(book) %></b></td>
+      <td colspan="2"><%= book.description %></td> 
+     
+   <% end %>
+  </table>
+   <%= will_paginate @books %>
+ </p>

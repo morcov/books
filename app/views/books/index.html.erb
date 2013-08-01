@@ -1,0 +1,13 @@
+<h1>Books</h1>
+
+
+   <table>
+   <% @books.each do |book| %>
+    <tr>
+      <td><b><%= link_to book.name, book_path(book) %></b></td>
+      <td><%= book.description %></td> 
+       <td><%= book.author %></td> 
+      
+   <% end %>
+  </table>
+  <%= will_paginate @books %>

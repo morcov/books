@@ -1,0 +1,26 @@
+<h1>Book</h1>
+<p>
+  <strong>Author:</strong>
+  <%= @book.author %>
+ </p>
+<p>
+  <strong>Name:</strong>
+  <%= @book.name %>
+ </p>
+ <p>
+  <strong>Description:</strong>
+  <%= @book.description %>
+</p>
+
+
+ <% if current_user %>
+   <% if current_user.id == @book.user_id%>
+    <%= link_to 'New path', new_path_path(@book) %> |
+   <% end %>
+   <% if current_user.id == @book.user_id ||  current_user.rank_id == 2 %>
+    <%= link_to 'Edit', edit_book_path(@book) %> |
+    <%= link_to 'Destroy', book_path(@book),
+                    method: :delete, data: { confirm: 'Are you sure?' } %> |
+   <% end %>
+  <% end %>
+<%= link_to 'Home', index_path %>

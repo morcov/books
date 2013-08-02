@@ -1,22 +1,26 @@
 Books::Application.routes.draw do
-  get "books/show"
-  get "books/edit"
-  get "book/new"
-  get "book/show"
-  get "book/edit"
+
   #--index--
   root to: "index#index"
   get "index" => "index#index", :as => "index"
   resources :index
 
-  #--sissions
+  #--user/sissions
   get "log_out" => "sessions#destroy", :as => "log_out"
   get "log_in" => "sessions#new", :as => "log_in"
   get "sign_up" => "users#new", :as => "sign_up"
   resources :users
   resources :sessions
-
+  
+  #--book
+  #get "books/new" => "books#new", :as => "new_book"
+  #get "books/:id" => "books#show", :as => "book"
+  #get "books/:id/edit" => "books#edit", :as => "edit_book"
+  #get "books" => "books#index", :as => "books"
   resources :books
+  
+  #--path
+  #get "books/path/:id" => "paths#show", :as => "path"
   resources :paths
 
 

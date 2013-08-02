@@ -10,6 +10,9 @@
     </ul>
   </div>
   <% end %>
+    <% if @book %>
+     <%= f.hidden_field :book_id, :value => @book.id %>
+    <% end %>
   <p>
     <%= f.label :path %><br>
     <%= f.text_field :path %>
@@ -21,6 +24,8 @@
   </p>
  
   <p>
+
     <%= submit_tag "Save" %>
   </p>
 <% end %>
+  

@@ -12,7 +12,7 @@
  <%= link_to 'Home', index_path %> |
  <%= link_to 'Books', books_path %>
   <% if current_user %>
-    | <%= link_to 'New book', new_book_path, :class => 'btn', :data => { :toggle => "modal", :target => "#new_book"},  :remote => :true %>
+    | <%= link_to 'New book', new_book_path %>
   <% end %>
 
    ||

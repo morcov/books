@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   def index
-  	@books = Book.paginate :page => params[:page], :per_page => 10, :order => 'updated_at DESC'
+  	@books = Book.paginate :page => params[:page], :per_page => 10, :order => 'name'
   	#:per_page => 50
   end
 

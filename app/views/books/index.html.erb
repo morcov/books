@@ -1,11 +1,11 @@
 <h1>Books</h1>
 
 
-   <table>
+   <table border="1" width="700px">
    <% @books.each do |book| %>
     <tr>
-      <td><b><%= link_to book.name, book_path(book) %></b></td>
-      <td><%= book.description %></td> 
+      <td width="150px"><b><%= link_to book.name, book_path(book) %></b></td>
+      <td width="350px"><%= book.description %></td> 
        <td><%= book.author %></td> 
       
    <% end %>

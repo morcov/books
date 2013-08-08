@@ -1,15 +1,11 @@
-<h1>Book</h1>
+<h1> <%= @book.name %></h1>
 <p>
   <strong>Author:</strong>
   <%= @book.author %>
  </p>
-<p>
-  <strong>Name:</strong>
-  <%= @book.name %>
- </p>
  <p>
   <strong>Description:</strong>
-  <%= @book.description %>
+  <%= simple_format(@book.description) %>
 </p>
 </p>
   <table border="1" width="500px">
@@ -31,3 +27,13 @@
    <% end %>
   <% end %>
 <%= link_to 'Home', index_path %>
+
+  <p>
+    <h2>Comments</h2>
+  <%= render @book.comment %>
+
+ <% if current_user %>
+  <h2>Add a comment:</h2>
+ <%= render "comments/form" %>
+  <% end %>
+  </p>

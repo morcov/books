@@ -1,0 +1,13 @@
+<p>
+	<b><%= comment.author %>:</b>
+    <%= comment.comment %>
+
+ <% if current_user %>
+   <% if current_user.id == comment.user_id || current_user.rank_id == 2 %>
+  <%= link_to 'x', [comment.book, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+ <% end %>
+   <% end %>
+</p>
+

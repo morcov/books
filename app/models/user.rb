@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
    belongs_to :rank
    has_many :book
    has_many :path
+   has_many :comment
 
    #attr_accessible :name, :surname, :email, :password, :password_confirmation
   

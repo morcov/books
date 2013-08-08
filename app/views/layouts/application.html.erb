@@ -5,10 +5,11 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <%= javascript_include_tag 'jquery', 'application' %>
 </head>
 <body>
 
-<div class="main" align="center">
+<div class="main">
  <%= link_to 'Home', index_path %> |
  <%= link_to 'Books', books_path %>
   <% if current_user %>

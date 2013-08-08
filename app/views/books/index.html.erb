@@ -1,13 +1,12 @@
 <h1>Books</h1>
 
 
-   <table border="1" width="700px">
+   <table border="1" width="500px">
    <% @books.each do |book| %>
     <tr>
-      <td width="150px"><b><%= link_to book.name, book_path(book) %></b></td>
-      <td width="350px"><%= book.description %></td> 
-       <td><%= book.author %></td> 
+      <td width="300px" align="left"><b><%= link_to book.name, book_path(book) %></b></td>
+       <td align="right"><%= book.author %></td> 
       
    <% end %>
   </table>
-  <%= will_paginate @books %>
+ <p> <%= will_paginate @books, :class => "will_paginate" %> </p>

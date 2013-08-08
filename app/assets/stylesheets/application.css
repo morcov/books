@@ -11,3 +11,19 @@
  *= require_self
  *= require_tree .
  */
+
+ div.main
+ {
+ 	margin: 0 auto;
+ 	width: 600px;
+ }
+
+ h1
+ {
+ 	text-align: center;
+ }
+
+ will_paginate
+ {
+ 	text-align: center;
+ }

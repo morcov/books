@@ -6,14 +6,26 @@ class BooksController < ApplicationController
 
   def new
   	@book = Book.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.js
+    end
   end
 
   def create
    if current_user
     @book = Book.new(params[:book].permit(:name, :description))
     @book.user_id = current_user.id 
-    @book.save
-    redirect_to @book
+    #@book.save
+      if @book.save
+       format.html { redirect_to redirect_to @book }
+        format.js
+      else
+       format.html { render :action => "new" }
+        format.js
+      end
+    
    else
     redirect_to log_in_path
    end

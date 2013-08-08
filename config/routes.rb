@@ -14,13 +14,15 @@ Books::Application.routes.draw do
   
   #--book
   #get "books/new" => "books#new", :as => "new_book"
-  #get "books/:id" => "books#show", :as => "book"
-  #get "books/:id/edit" => "books#edit", :as => "edit_book"
+  #get "book/:id" => "books#show", :as => "book"
+  #get "book/:id/edit" => "books#edit", :as => "edit_book"
   #get "books" => "books#index", :as => "books"
-  resources :books
+  resources :books do
+    resources :comments
+  end
   
   #--path
-  #get "books/path/:id" => "paths#show", :as => "path"
+  #get "book/path/:id" => "paths#show", :as => "path"
   resources :paths
 
 

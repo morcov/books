@@ -1,3 +1,6 @@
 <h1>Index</h1>
-<%= link_to 'New book', new_book_path, remote: true, :data => { :toggle => "modal", :target => "#new_book"}, id: "new_book" %>
+<%= render "temp" %>
+<h3>New book:</h3>
 <%= render "books" %>
+<h3>New path:</h3>
+<%= render "path" %>

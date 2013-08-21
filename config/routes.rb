@@ -13,7 +13,7 @@ Books::Application.routes.draw do
   resources :sessions
   
   #--book
-  #get "books/new" => "books#new", :as => "new_book"
+  get "books/new" => "books#new", :as => "new_book"
   #get "book/:id" => "books#show", :as => "book"
   #get "book/:id/edit" => "books#edit", :as => "edit_book"
   #get "books" => "books#index", :as => "books"

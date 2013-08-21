@@ -1,0 +1,10 @@
+<p>
+  <table>
+   <% @paths.each do |path| %>
+    <tr>
+      <td colspan="2"><b><%= link_to path.path, path_path(path) %></b></td>
+      <td colspan="2"><%= path.book %></td> 
+     
+   <% end %>
+  </table>
+ </p>
